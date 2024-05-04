@@ -26,3 +26,34 @@ arrowLeft.addEventListener("click",() => {
         slideNumber = image.length;
     }
 })
+
+
+let btn = document.getElementById("Change");
+let show = document.getElementById("search-mode")
+let Mode = "light";
+let body = document.querySelector("body");
+
+
+function changeMode(){
+btn.addEventListener("click",() => {
+    if(Mode === "light"){
+        Mode = "dark";
+        body.style.transition = '0.4s ease ';
+        // body.style.zIndex = '1';
+        body.classList.add("dark");
+        body.classList.remove("light");
+        show.value = `${Mode}`;
+    }
+    else{
+        Mode = "light";
+        body.style.transition = '0.4s ease ';
+        // body.style.zIndex = '1';
+        show.value = `${Mode}`;
+        body.classList.add("light");
+        body.classList.remove("dark");
+    }
+    console.log(Mode);
+})
+}
+
+changeMode();
